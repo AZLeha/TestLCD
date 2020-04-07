@@ -20,33 +20,41 @@ Screen1ViewBase::Screen1ViewBase() :
     swipeContainer1Page1.setWidth(800);
     swipeContainer1Page1.setHeight(480);
 
+    image1.setXY(353, 165);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_PNG_TRANSPARENCY_DEMONSTRATION_1_ID));
+    swipeContainer1Page1.add(image1);
+    swipeContainer1.add(swipeContainer1Page1);
+
+    swipeContainer1Page2.setWidth(800);
+    swipeContainer1Page2.setHeight(480);
+
+    box_Right.setPosition(269, 140, 50, 50);
+    box_Right.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    swipeContainer1Page2.add(box_Right);
+
+    box_Buttom.setPosition(219, 190, 50, 50);
+    box_Buttom.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    swipeContainer1Page2.add(box_Buttom);
+
+    box_Top.setPosition(219, 90, 50, 50);
+    box_Top.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    swipeContainer1Page2.add(box_Top);
+
+    box_Left.setPosition(169, 140, 50, 50);
+    box_Left.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    swipeContainer1Page2.add(box_Left);
+
     slider1.setXY(552, 71);
     slider1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
     slider1.setupVerticalSlider(7, 3, 0, 0, 285);
     slider1.setValueRange(0, 100);
     slider1.setValue(0);
     slider1.setNewValueCallback(sliderValueChangedCallback);
-    swipeContainer1Page1.add(slider1);
+    swipeContainer1Page2.add(slider1);
+    swipeContainer1.add(swipeContainer1Page2);
 
-    box_Left.setPosition(169, 140, 50, 50);
-    box_Left.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    swipeContainer1Page1.add(box_Left);
-
-    box_Top.setPosition(219, 90, 50, 50);
-    box_Top.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    swipeContainer1Page1.add(box_Top);
-
-    box_Buttom.setPosition(219, 190, 50, 50);
-    box_Buttom.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    swipeContainer1Page1.add(box_Buttom);
-
-    box_Right.setPosition(269, 140, 50, 50);
-    box_Right.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    swipeContainer1Page1.add(box_Right);
-    swipeContainer1.add(swipeContainer1Page1);
-
-    swipeContainer1Page2.setWidth(800);
-    swipeContainer1Page2.setHeight(480);
+    swipeContainer1Page3.setWidth(800);
+    swipeContainer1Page3.setHeight(480);
 
     analogClock1.setXY(271, 204);
     analogClock1.setBackground(BITMAP_BLUE_CLOCKS_BACKGROUNDS_CLOCK_STANDARD_BACKGROUND_ID, 116, 116);
@@ -56,21 +64,21 @@ Screen1ViewBase::Screen1ViewBase() :
     analogClock1.setupHourHand(BITMAP_BLUE_CLOCKS_HANDS_CLOCK_STANDARD_HOUR_HAND_ID, 7, 52);
     analogClock1.setHourHandMinuteCorrection(false);
     analogClock1.initializeTime24Hour(10, 10, 0);
-    swipeContainer1Page2.add(analogClock1);
-
-    textArea1.setXY(271, 76);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
-    swipeContainer1Page2.add(textArea1);
+    swipeContainer1Page3.add(analogClock1);
 
     textArea2.setXY(412, 76);
     textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
-    swipeContainer1Page2.add(textArea2);
-    swipeContainer1.add(swipeContainer1Page2);
-    swipeContainer1.setSelectedPage(0);
+    swipeContainer1Page3.add(textArea2);
+
+    textArea1.setXY(271, 76);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
+    swipeContainer1Page3.add(textArea1);
+    swipeContainer1.add(swipeContainer1Page3);
+    swipeContainer1.setSelectedPage(1);
 
     add(box1);
     add(swipeContainer1);

@@ -9,7 +9,7 @@ void delay_us(uint32_t value)
 {
 	uint32_t i;
 	i = value * 150;
-	while(i--);
+	while(i--) asm("NOP");
 }
 
 /**

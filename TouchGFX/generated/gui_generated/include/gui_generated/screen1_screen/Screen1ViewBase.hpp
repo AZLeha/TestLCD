@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/containers/clock/AnalogClock.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
@@ -40,15 +41,17 @@ protected:
     touchgfx::Box box1;
     touchgfx::SwipeContainer swipeContainer1;
     touchgfx::Container swipeContainer1Page1;
-    touchgfx::Slider slider1;
-    touchgfx::Box box_Left;
-    touchgfx::Box box_Top;
-    touchgfx::Box box_Buttom;
-    touchgfx::Box box_Right;
+    touchgfx::Image image1;
     touchgfx::Container swipeContainer1Page2;
+    touchgfx::Box box_Right;
+    touchgfx::Box box_Buttom;
+    touchgfx::Box box_Top;
+    touchgfx::Box box_Left;
+    touchgfx::Slider slider1;
+    touchgfx::Container swipeContainer1Page3;
     touchgfx::AnalogClock analogClock1;
-    touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea2;
+    touchgfx::TextArea textArea1;
 
 private:
 
