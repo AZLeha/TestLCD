@@ -9,7 +9,7 @@ void delay_us(uint32_t value)
 {
 	uint32_t i;
 	i = value * 150;
-	while(i--) asm("NOP");
+	while(i--)asm("NOP");
 }
 
 /**
@@ -98,7 +98,7 @@ void I2C_Stop(void)
  	delay_us(5);
 	SET_CLK();
 	SET_SDA();
-	delay_us(5);							   	
+	delay_us(5);
 }
 
 /**
@@ -110,10 +110,10 @@ uint8_t I2C_Wait_Ack(void)
 {
 	uint16_t ucErrTime=0;
 	//CT_SDA_OUT();     
-	//SET_SDA();   delay_us(1);	
+	//SET_SDA();   delay_us(1);
 	SDA_IN(); 
 	SET_CLK();
-	delay_us(1);	
+	delay_us(1);
 	while(READ_SDA())
 	{
 		ucErrTime++;

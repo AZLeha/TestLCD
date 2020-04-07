@@ -3,8 +3,7 @@
 
 
 GT911_Dev Dev_Now,Dev_Backup;
-
-
+GT911_Dev NullSTR = {0};
 static uint8_t GT911_WR_Reg(uint16_t reg,uint8_t *buf,uint8_t len)
 {
 	uint8_t i;
@@ -103,6 +102,7 @@ void GT911_Reset_Sequence()
 	I2C_Init();
 	GT911_ReadStatue();
 	GT911_ReadFirmwareVersion();
+
 }
 
 
@@ -179,10 +179,10 @@ GT911_Dev getTouch(void)
 				Dev_Backup.TouchCount = Dev_Now.TouchCount;
 
 			}
-
+			return Dev_Now;
 		}
 	}
-	return Dev_Now;
+	return NullSTR;
 }
 
 
